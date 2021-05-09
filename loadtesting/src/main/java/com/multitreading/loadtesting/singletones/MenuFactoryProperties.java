@@ -1,6 +1,6 @@
 package com.multitreading.loadtesting.singletones;
 
-public enum MenuFactoryService {
+public enum MenuFactoryProperties {
 
 	MENUFACTORY_URLS;
 	

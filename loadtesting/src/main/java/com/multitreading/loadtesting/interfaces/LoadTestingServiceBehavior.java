@@ -2,10 +2,10 @@ package com.multitreading.loadtesting.interfaces;
 
 public interface LoadTestingServiceBehavior {
 
-	public void ingredientsLoadTesting();
+	public void runIngredientsLoadTesting(String url);
 	
-	public void recipesLoadTesting();
+	public void runRecipesLoadTesting(String url);
 	
-	public void menusLoadTesting();
+	public void runMenusLoadTesting(String url);
 		
 }

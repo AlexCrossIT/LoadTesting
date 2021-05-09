@@ -12,14 +12,18 @@ public class LoadTestingServlet extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
 
+	public LoadTestingServlet() {
+		
+		int a = 1;
+		
+	}
+	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		PrintWriter out = resp.getWriter();
 		out.println("Load testing is started");
-		
-		//super.doPost(req, resp);
-		
+				
 	}
 
 	
