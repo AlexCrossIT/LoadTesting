@@ -1,6 +1,6 @@
 package com.multitreading.loadtesting.interfaces;
 
-public interface RecipesLoadTestingBehavior {
+public interface RecipesLoadTestingServiceBehavior {
 
 	public void createRecipes(int ingredientsQuantity, int treadsQuantity);
 	

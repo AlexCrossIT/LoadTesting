@@ -1,6 +1,6 @@
 package com.multitreading.loadtesting.interfaces;
 
-public interface LoadTestingBehavior {
+public interface LoadTestingServiceBehavior {
 
 	public void ingredientsLoadTesting();
 	
