@@ -1,8 +1,7 @@
 package com.multitreading.loadtesting.services;
 
-import com.multitreading.loadtesting.interfaces.LoadTestingServiceBehavior;
 
-public class LoadTestingService implements LoadTestingServiceBehavior{
+public class MenuFactoryLoadTestingService extends Service{
 
 	@Override
 	public void runIngredientsLoadTesting(String url) {
@@ -22,4 +21,5 @@ public class LoadTestingService implements LoadTestingServiceBehavior{
 		
 	}
 
+	
 }

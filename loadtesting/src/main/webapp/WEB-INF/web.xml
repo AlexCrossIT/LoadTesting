@@ -6,12 +6,12 @@
 
     <servlet>
         <servlet-name>LoadTesting</servlet-name>
-        <servlet-class>com.multitreading.loadtesting.servlets.LoadTesting</servlet-class>
+        <servlet-class>com.multitreading.loadtesting.servlets.LoadTestingServlet</servlet-class>
     </servlet>
     
     <servlet>
         <servlet-name>MainPage</servlet-name>
-        <servlet-class>com.multitreading.loadtesting.servlets.MainPage</servlet-class>
+        <servlet-class>com.multitreading.loadtesting.servlets.MainPageServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
