@@ -14,6 +14,12 @@ public class JavaConfiguration implements ConfigurationBehavior{
 		
 		return "com.multitreading.loadtesting";
 	}
+	
+	public String getIngredientCreateUrl() {
+		
+		return "https://menufactory.herokuapp.com/ingredient-edit";
+		
+	}
 
 	@Override
 	public Map<Class, Class> getInterfaceToImplementations() {

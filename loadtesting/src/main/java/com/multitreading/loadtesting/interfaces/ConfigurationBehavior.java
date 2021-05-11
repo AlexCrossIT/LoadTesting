@@ -6,6 +6,8 @@ public interface ConfigurationBehavior {
 
 	String getPackageToScan();
 	
+	String getIngredientCreateUrl();
+	
 	Map<Class, Class> getInterfaceToImplementations();
 	
 }
