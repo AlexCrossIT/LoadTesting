@@ -37,12 +37,12 @@ public class JavaBeanConfigurator implements BeanConfiguratorBehavior{
 				Inject injectAnnotation = (Inject) Arrays.stream(annotations)
 														 .filter(annotation -> annotation instanceof Inject)
 														 .findFirst()
-														 .orElseThrow(() -> new RuntimeException(String.format("Interface %class has %impCount implementations."
+														 .orElseThrow(() -> new RuntimeException(String.format("%s has %d implementations."
 														 												 + " Add Inject annotation with \"name\" param.",
 														 												 clazz, implementationClasses.size())));
 				
 				if(injectAnnotation == null || injectAnnotation.name().isEmpty()) {
-					throw new RuntimeException(String.format("Interface %class has %impCount implementations."
+					throw new RuntimeException(String.format("%s has %d implementations."
 															 + " Set \"name\" param for Inject annotation.",
 															 clazz, implementationClasses.size()));
 				}

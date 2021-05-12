@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 
+import com.multitreading.loadtesting.annotations.Inject;
 import com.multitreading.loadtesting.contexts.ApplicationContext;
 import com.multitreading.loadtesting.factories.BeanFactory;
 import com.multitreading.loadtesting.interfaces.ApplicationContextBehavior;
@@ -44,7 +45,8 @@ public class LoadTestingHttpServlet extends HttpServlet{
 		Field[] servletFields = servletClass.getDeclaredFields();
 		
 		for(Field servletField: Arrays.stream(servletFields)
-			  .collect(Collectors.toList())) {
+									  .filter(field -> field.isAnnotationPresent(Inject.class))
+									  .collect(Collectors.toList())) {
 				   
 				Field beanField = Arrays.stream(beanFields).filter(field-> field.equals(servletField)).findFirst().get();
    
