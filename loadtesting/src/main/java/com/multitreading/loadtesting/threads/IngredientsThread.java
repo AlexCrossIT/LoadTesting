@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.StringJoiner;
 
-import com.multitreading.loadtesting.exceptions.IngredientsLoadTestingException;
+import com.multitreading.loadtesting.exceptions.LoadTestingException;
 
 public class IngredientsThread implements Runnable{
 
@@ -102,11 +102,11 @@ public class IngredientsThread implements Runnable{
 			int httpResponseCode = httpConnection.getResponseCode();
 			
 			if(httpResponseCode != HttpURLConnection.HTTP_OK && httpResponseCode != HttpURLConnection.HTTP_MOVED_TEMP) {
-				throw new IngredientsLoadTestingException("Cannot create ingredient. Response code: " + httpConnection.getResponseCode());				
+				throw new LoadTestingException("Cannot create ingredient. Response code: " + httpConnection.getResponseCode());				
 			}			
 		} catch (IOException e) {
 			e.printStackTrace();
-		} catch (IngredientsLoadTestingException e) {
+		} catch (LoadTestingException e) {
 			System.out.println(e.getMessage());
 		}
 				

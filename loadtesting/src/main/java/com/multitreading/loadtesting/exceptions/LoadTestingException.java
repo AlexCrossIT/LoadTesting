@@ -1,10 +1,10 @@
 package com.multitreading.loadtesting.exceptions;
 
-public class IngredientsLoadTestingException extends Exception{
+public class LoadTestingException extends Exception{
 
 	private static final long serialVersionUID = 1L;
 	
-	public IngredientsLoadTestingException(String message) {
+	public LoadTestingException(String message) {
 		
 		super(message);
 		
