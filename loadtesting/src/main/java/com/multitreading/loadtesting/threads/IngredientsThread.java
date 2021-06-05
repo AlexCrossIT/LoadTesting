@@ -92,24 +92,22 @@ public class IngredientsThread implements Runnable{
 		httpConnection.setDoOutput(true);
 					
 		try (OutputStream outputStream = httpConnection.getOutputStream()){
+			
 			outputStream.write(ingredientData);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		try {
 			
 			int httpResponseCode = httpConnection.getResponseCode();
 			
 			if(httpResponseCode != HttpURLConnection.HTTP_OK && httpResponseCode != HttpURLConnection.HTTP_MOVED_TEMP) {
 				throw new LoadTestingException("Cannot create ingredient. Response code: " + httpConnection.getResponseCode());				
-			}			
+			}
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (LoadTestingException e) {
 			System.out.println(e.getMessage());
-		}
-				
+		} finally {
+			httpConnection.disconnect();
+		}				
 				
 	}
 

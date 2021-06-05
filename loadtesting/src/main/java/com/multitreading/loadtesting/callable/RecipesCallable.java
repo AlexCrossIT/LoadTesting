@@ -82,25 +82,22 @@ public class RecipesCallable implements Callable<String>{
 		httpConnection.setDoOutput(true);
 					
 		try (OutputStream outputStream = httpConnection.getOutputStream()){
+			
 			outputStream.write(recipeData);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		try {
 			
 			int httpResponseCode = httpConnection.getResponseCode();
 			
 			if(httpResponseCode != HttpURLConnection.HTTP_OK && httpResponseCode != HttpURLConnection.HTTP_MOVED_TEMP) {
-				throw new LoadTestingException("Cannot create recipe. Response code: " + httpConnection.getResponseCode());				
+				throw new LoadTestingException("Cannot create recipe. Response code: " + httpResponseCode);				
 			}
 			
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (LoadTestingException e) {
 			System.out.println(e.getMessage());
-		}
-				
+		} finally {
+			httpConnection.disconnect();
+		} 				
 				
 	}
 
