@@ -18,11 +18,13 @@ public class IngredientsLoadTestingService implements IngredientsLoadTestingServ
 				int lastThreadIngredientQuantity = ingredientsQuantity - ingredientQuantityPerThread * (threadsQuantity - 1); 
 				
 				Thread thread = new Thread(new IngredientsThread(url, lastThreadIngredientQuantity));
+				thread.setDaemon(true);
 				thread.start();
 				
 			} else {
 				
 				Thread thread = new Thread(new IngredientsThread(url, ingredientQuantityPerThread));
+				thread.setDaemon(true);
 				thread.start();
 				
 			}
