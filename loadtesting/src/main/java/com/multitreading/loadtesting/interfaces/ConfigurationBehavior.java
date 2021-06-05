@@ -8,6 +8,10 @@ public interface ConfigurationBehavior {
 	
 	String getIngredientCreateUrl();
 	
+	String getRecipeCreateUrl();
+	
+	String getMenuCreateUrl();
+	
 	Map<Class, Class> getInterfaceToImplementations();
 	
 }

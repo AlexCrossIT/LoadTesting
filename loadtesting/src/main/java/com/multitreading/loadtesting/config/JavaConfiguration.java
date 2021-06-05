@@ -22,6 +22,20 @@ public class JavaConfiguration implements ConfigurationBehavior{
 	}
 
 	@Override
+	public String getRecipeCreateUrl() {
+		
+		return "https://menufactory.herokuapp.com/recipe-edit";
+		
+	}
+
+	@Override
+	public String getMenuCreateUrl() {
+		
+		return "https://menufactory.herokuapp.com/menu-edit";
+		
+	}
+	
+	@Override
 	public Map<Class, Class> getInterfaceToImplementations() {
 	
 		Map<Class, Class> compliance = new HashMap<>();
@@ -31,5 +45,6 @@ public class JavaConfiguration implements ConfigurationBehavior{
 		return compliance;
 		
 	}
+
 
 }

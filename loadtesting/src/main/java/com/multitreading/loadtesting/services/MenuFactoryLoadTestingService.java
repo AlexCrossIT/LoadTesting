@@ -16,13 +16,14 @@ public class MenuFactoryLoadTestingService extends Service{
 	@Override
 	public void runIngredientsLoadTesting() {
 		
-		ingredientsLoadTestingServiceBehavior.createIngredients(configurationBehavior.getIngredientCreateUrl(), 8, 8000);
+		//ingredientsLoadTestingServiceBehavior.createIngredients(configurationBehavior.getIngredientCreateUrl(), 8, 13000);
 		
 	}
 
 	@Override
 	public void runRecipesLoadTesting() {
-		// TODO Auto-generated method stub
+		
+		recipesLoadTestingServiceBehavior.createRecipes(configurationBehavior.getRecipeCreateUrl(), 8, 10000);
 		
 	}
 
