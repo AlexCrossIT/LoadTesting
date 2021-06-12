@@ -36,7 +36,7 @@ public class RecipesCallable implements Callable<String>{
 		System.out.println(threadName + " has started.");
 		
 		for(int i = 1; i <= recipesQuantity; i++) {
-			byte[] recipeData = getRecipetData();
+			byte[] recipeData = getRecipeData();
 			sendRecipeData(recipeData);			
 		}
 		
@@ -48,7 +48,7 @@ public class RecipesCallable implements Callable<String>{
 		
 	}
 	
-	private byte[] getRecipetData(){
+	private byte[] getRecipeData(){
 		
 		String jsonString = "{"
 							+ System.lineSeparator() + "\"recipeId\": \"\","
